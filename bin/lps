@@ -1,0 +1,96 @@
+#!/bin/bash
+PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.."&& pwd)"
+MODULE_DIR="$PROJECT_ROOT/modules"
+CONFIG_FILE="$PROJECT_ROOT/config/lps.conf"
+LOG_DIR="$PROLECT_ROOT/logs"
+show_banner() {
+echo
+"=========================================="
+echo " Linux Production Server Platform"
+echo
+"=========================================="
+echo
+}
+show_menu() {
+echo "1. System Information"
+echo "2. Filesystem Analysis"
+echo "3. File Management"
+echo "4. Permission Audit"
+echo "5. User & Group Audit"
+echo "6. Process Monitoring"
+echo "7. service Health"
+echo "8. Package Audit"
+echo "9. Network Diagnostic"
+echo "10. Shell Automation"
+echo "11. Log Analysis"
+echo "12. SSH Health"
+echo "13. Cron Status"
+echo "14. Performance Analysis"
+echo "15. Full Health Check"
+echo "0. Exit"
+echo
+ }
+log_event() {
+echo "$(date '+%Y-%m-%d %H:%M:%S') | $1" >> "$LOG_DIR/lps.log"
+}
+while true; do
+clear
+show_banner
+show_menu
+read -rp "Select an option: " choice
+case "$choice" in
+1) bash "$MODULE_DIR/system.sh"
+;;
+2) bash "$MODULE_DIR/filesystem.sh"
+;;
+3) bash "$MODULE_DIR/files.sh"
+;;
+4) bash "$MODULE_DIR/permissions.sh"
+;;
+5) bash "$MODULE_DIR/users.sh"
+;;
+6) bash "$MODULE_DIR/processes.sh"
+;;
+7) bash "$MODULE_DIR/services.sh"
+;;
+8) bash "$MODULE_DIR/packeges.sh"
+;;
+9) bash "$MODULE_DIR/packages.sh"
+;;
+10) bash "$MODULE_DIR/network.sh"
+;;
+11) bash "$MODULE_DIR/shell.sh"
+;;
+12) bash "$MODULE_DIR/logs.sh"
+;;
+13) bash "$MODULE_DIR/cron.sh"
+;;
+14) bash "$MODULE_DIR/performence.sh"
+;;
+15) echo
+echo "===== FULL HEALTH CHECK ====="
+echo
+bash "$MODULE_DIR/system.sh"
+bash "$MODULE_DIR/filesystem.sh"
+bash "$MODULE_DIR/processes.sh"
+bash "$MODULE_DIR/services.sh"
+bash "$MODULE_DIR/network.sh"
+bash "$MODULE_DIR/logs.sh"
+bash "$MODULE_DIR/ssh.sh"
+bash "$MODULE_DIR/cron.sh"
+bash "$MODULE_DIR/performance.sh"
+echo
+echo "===== FULL HEALTH CHECK COMPLETE ====="
+;;
+0) log_event "Application exited"
+echo "Exiting..."
+exit 0
+;;
+*)
+echo
+echo "Invalid option."
+;;
+esac
+echo
+read -rp "Press Enter to continue..."
+done
