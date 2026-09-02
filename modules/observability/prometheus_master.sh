@@ -9,6 +9,9 @@ echo "======================================"
 modules=(
     prometheus/prometheus_config.sh
     prometheus/metrics_contract.sh
+    prometheus/node_exporter.sh
+    prometheus/linux_metrics.sh
+    prometheus/metrics_validation.sh
     prometheus/prometheus_health.sh
 )
 

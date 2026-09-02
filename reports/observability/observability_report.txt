@@ -22,3 +22,13 @@
 [2026-09-02 06:12:04] Prometheus configuration validation completed.
 [2026-09-02 06:12:04] Platform metrics contract validated.
 [2026-09-02 06:12:04] Prometheus health check completed.
+[2026-09-02 06:19:10] Prometheus configuration validation completed.
+[2026-09-02 06:19:10] Platform metrics contract validated.
+[2026-09-02 06:19:10] Native Linux metrics snapshot written to /home/vboxuser/linux-production-platform/reports/observability/linux_metrics.txt.
+[2026-09-02 06:19:10] Linux metrics validation passed.
+[2026-09-02 06:19:10] Prometheus health check completed.
+[2026-09-02 06:21:25] Prometheus configuration validation completed.
+[2026-09-02 06:21:25] Platform metrics contract validated.
+[2026-09-02 06:21:25] Native Linux metrics snapshot written to /home/vboxuser/linux-production-platform/reports/observability/linux_metrics.txt.
+[2026-09-02 06:21:25] Linux metrics validation passed.
+[2026-09-02 06:21:25] Prometheus health check completed.
