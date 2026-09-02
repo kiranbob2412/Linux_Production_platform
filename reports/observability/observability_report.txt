@@ -44,3 +44,6 @@
 [2026-09-02 06:52:28] Native Linux metrics snapshot written to /home/vboxuser/linux-production-platform/reports/observability/linux_metrics.txt.
 [2026-09-02 06:52:28] Linux metrics validation passed.
 [2026-09-02 06:52:29] Prometheus health check completed.
+[2026-09-02 06:59:24] Prometheus alert rules validated.
+[2026-09-02 06:59:24] Alertmanager integration checked.
+[2026-09-02 06:59:25] Alert severity model documented.

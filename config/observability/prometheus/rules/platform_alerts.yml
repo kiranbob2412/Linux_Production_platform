@@ -1,0 +1,98 @@
+groups:
+  - name: linux-production-platform
+    rules:
+
+      - alert: NodeExporterDown
+        expr: up{job="linux-production-platform"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          component: monitoring
+        annotations:
+          summary: "Node Exporter target is down"
+          description: "Prometheus cannot scrape the Linux Production Platform metrics endpoint."
+
+      - alert: HighCPUUsage
+        expr: |
+          100 - (
+            avg by(instance) (
+              rate(node_cpu_seconds_total{mode="idle"}[5m])
+            ) * 100
+          ) > 85
+        for: 5m
+        labels:
+          severity: warning
+          component: cpu
+        annotations:
+          summary: "High CPU usage"
+          description: "CPU usage has exceeded 85% for 5 minutes."
+
+      - alert: CriticalCPUUsage
+        expr: |
+          100 - (
+            avg by(instance) (
+              rate(node_cpu_seconds_total{mode="idle"}[5m])
+            ) * 100
+          ) > 95
+        for: 2m
+        labels:
+          severity: critical
+          component: cpu
+        annotations:
+          summary: "Critical CPU usage"
+          description: "CPU usage has exceeded 95% for 2 minutes."
+
+      - alert: HighMemoryUsage
+        expr: |
+          (
+            1 -
+            node_memory_MemAvailable_bytes /
+            node_memory_MemTotal_bytes
+          ) * 100 > 90
+        for: 5m
+        labels:
+          severity: critical
+          component: memory
+        annotations:
+          summary: "Critical memory usage"
+          description: "Memory usage has exceeded 90% for 5 minutes."
+
+      - alert: HighFilesystemUsage
+        expr: |
+          (
+            1 -
+            node_filesystem_avail_bytes{
+              fstype!~"tmpfs|overlay|squashfs"
+            }
+            /
+            node_filesystem_size_bytes{
+              fstype!~"tmpfs|overlay|squashfs"
+            }
+          ) * 100 > 90
+        for: 10m
+        labels:
+          severity: warning
+          component: filesystem
+        annotations:
+          summary: "Filesystem usage is high"
+          description: "A filesystem has exceeded 90% utilization."
+
+      - alert: CriticalFilesystemUsage
+        expr: |
+          (
+            1 -
+            node_filesystem_avail_bytes{
+              fstype!~"tmpfs|overlay|squashfs"
+            }
+            /
+            node_filesystem_size_bytes{
+              fstype!~"tmpfs|overlay|squashfs"
+            }
+          ) * 100 > 95
+        for: 5m
+        labels:
+          severity: critical
+          component: filesystem
+        annotations:
+          summary: "Filesystem critically full"
+          description: "A filesystem has exceeded 95% utilization."
