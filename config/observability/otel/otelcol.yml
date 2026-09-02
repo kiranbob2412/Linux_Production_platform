@@ -20,10 +20,21 @@ processors:
 
 exporters:
 
+  prometheus:
+    endpoint: 0.0.0.0:8889
+
   debug:
     verbosity: basic
 
+extensions:
+
+  health_check:
+    endpoint: 0.0.0.0:13133
+
 service:
+
+  extensions:
+    - health_check
 
   pipelines:
 
@@ -43,6 +54,7 @@ service:
         - memory_limiter
         - batch
       exporters:
+        - prometheus
         - debug
 
     logs:

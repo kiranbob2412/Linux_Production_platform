@@ -15,3 +15,8 @@ scrape_configs:
     static_configs:
       - targets:
           - 127.0.0.1:9100
+
+  - job_name: opentelemetry
+    static_configs:
+      - targets:
+          - 127.0.0.1:8889
