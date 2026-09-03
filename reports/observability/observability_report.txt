@@ -53,3 +53,9 @@
 [2026-09-02 07:11:38] Distributed tracing model validated.
 [2026-09-02 07:11:38] Telemetry correlation model validated.
 [2026-09-02 07:11:38] OpenTelemetry health check completed.
+[2026-09-03 06:33:31] Distributed tracing backend is healthy.
+[2026-09-03 06:37:11] Tempo project configuration validated.
+[2026-09-03 06:40:45] Tempo project configuration validated.
+[2026-09-03 06:42:05] Tempo project configuration validated.
+[2026-09-03 06:42:18] Tempo runtime is healthy.
+[2026-09-03 06:43:18] Distributed tracing backend is healthy.

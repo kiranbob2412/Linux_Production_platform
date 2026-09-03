@@ -1,0 +1,22 @@
+target: all
+
+stream_over_http_enabled: true
+
+server:
+  http_listen_port: 3200
+  grpc_listen_port: 9095
+
+distributor:
+  receivers:
+    otlp:
+      protocols:
+        grpc:
+          endpoint: 127.0.0.1:4327
+        http:
+          endpoint: 127.0.0.1:4328
+
+storage:
+  trace:
+    backend: local
+    local:
+      path: /var/lib/tempo

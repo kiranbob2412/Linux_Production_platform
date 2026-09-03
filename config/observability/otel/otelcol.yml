@@ -20,6 +20,11 @@ exporters:
   otlp_http/loki:
     endpoint: http://127.0.0.1:3100/otlp
 
+  otlp/tempo:
+    endpoint: 127.0.0.1:4327
+    tls:
+      insecure: true
+
   prometheus:
     endpoint: 0.0.0.0:8889
 
@@ -42,6 +47,7 @@ service:
         - memory_limiter
         - batch
       exporters:
+        - otlp/tempo
         - debug
 
     metrics:
