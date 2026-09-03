@@ -89,3 +89,13 @@
 [2026-09-03 07:21:46] Network flow observability capabilities are healthy.
 [2026-09-03 07:21:49] Observability correlation signals and backend readiness are healthy.
 [2026-09-03 07:21:49] Observability health: 4/4
+[2026-09-03 07:32:21] Observability health: 8/8; all required checks passed.
+[2026-09-03 07:36:04] System metrics collection completed.
+[2026-09-03 07:36:04] Prometheus detected.
+[2026-09-03 07:36:06] Log source discovery completed.
+[2026-09-03 07:36:06] OpenTelemetry Collector detected.
+[2026-09-03 07:36:08] Distributed tracing backend is healthy.
+[2026-09-03 07:36:08] eBPF observability capability and runtime inventory are healthy.
+[2026-09-03 07:36:08] Network flow observability capabilities are healthy.
+[2026-09-03 07:36:12] Observability correlation signals and backend readiness are healthy.
+[2026-09-03 07:36:14] Observability health: 8/8; all required checks passed.
