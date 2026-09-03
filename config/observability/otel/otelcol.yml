@@ -1,5 +1,4 @@
 receivers:
-
   otlp:
     protocols:
       grpc:
@@ -8,7 +7,6 @@ receivers:
         endpoint: 0.0.0.0:4318
 
 processors:
-
   memory_limiter:
     check_interval: 1s
     limit_mib: 256
@@ -19,6 +17,8 @@ processors:
     send_batch_size: 1024
 
 exporters:
+  otlp_http/loki:
+    endpoint: http://127.0.0.1:3100/otlp
 
   prometheus:
     endpoint: 0.0.0.0:8889
@@ -27,17 +27,14 @@ exporters:
     verbosity: basic
 
 extensions:
-
   health_check:
     endpoint: 0.0.0.0:13133
 
 service:
-
   extensions:
     - health_check
 
   pipelines:
-
     traces:
       receivers:
         - otlp
@@ -65,3 +62,4 @@ service:
         - batch
       exporters:
         - debug
+        - otlp_http/loki
