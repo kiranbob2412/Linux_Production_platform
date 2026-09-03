@@ -59,3 +59,13 @@
 [2026-09-03 06:42:05] Tempo project configuration validated.
 [2026-09-03 06:42:18] Tempo runtime is healthy.
 [2026-09-03 06:43:18] Distributed tracing backend is healthy.
+[2026-09-03 06:58:47] eBPF observability capability and runtime inventory are healthy.
+[2026-09-03 07:00:59] System metrics collection completed.
+[2026-09-03 07:00:59] Prometheus detected.
+[2026-09-03 07:01:01] Log source discovery completed.
+[2026-09-03 07:01:02] OpenTelemetry Collector detected.
+[2026-09-03 07:01:03] Distributed tracing backend is healthy.
+[2026-09-03 07:01:03] eBPF observability capability and runtime inventory are healthy.
+[2026-09-03 07:01:03] Network flow observability discovery completed.
+[2026-09-03 07:01:03] Observability correlation model validated.
+[2026-09-03 07:01:03] Observability health: 4/4
