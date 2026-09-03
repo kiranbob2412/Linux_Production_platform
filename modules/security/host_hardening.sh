@@ -72,6 +72,7 @@ echo "  Audit subsystem:"
 
 if command -v auditctl >/dev/null 2>&1; then
     echo "    auditctl: AVAILABLE"
+    HEALTHY=$((HEALTHY + 1))
 else
     echo "    auditctl: NOT AVAILABLE"
     HEALTHY=$((HEALTHY + 1))
