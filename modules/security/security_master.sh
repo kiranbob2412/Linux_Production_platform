@@ -10,6 +10,7 @@ echo "======================================"
 modules=(
     host_hardening.sh
     audit.sh
+    audit_policy.sh
 )
 
 failed=0

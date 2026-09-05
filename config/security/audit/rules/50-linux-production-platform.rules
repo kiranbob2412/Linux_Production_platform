@@ -1,0 +1,17 @@
+# Linux Production Platform - Audit Security Baseline
+#
+# Project-owned audit policy.
+# Distro-managed /etc/audit/rules.d/audit.rules is not modified.
+
+# Identity and account databases
+-w /etc/passwd -p wa -k identity
+-w /etc/group -p wa -k identity
+-w /etc/shadow -p wa -k identity
+-w /etc/gshadow -p wa -k identity
+
+# Privilege configuration
+-w /etc/sudoers -p wa -k privilege
+-w /etc/sudoers.d/ -p wa -k privilege
+
+# Authentication configuration
+-w /etc/pam.d/ -p wa -k authentication
